@@ -682,7 +682,6 @@ export const Preferences = ({
             <PreferencesToggleElementPropertiesItem />
             <PreferencesToggleArrowBindingItem />
             <PreferencesToggleMidpointSnappingItem />
-            <PreferencesToggleShowHintsItem />
           </>
         )}
         {additionalItems}
