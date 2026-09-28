@@ -16,7 +16,10 @@ import {
 
 import { syncMovedIndices } from "@excalidraw/element";
 
-import { duplicateElements } from "@excalidraw/element";
+import {
+  advanceDuplicatedListMarkers,
+  duplicateElements,
+} from "@excalidraw/element";
 
 import { CaptureUpdateAction } from "@excalidraw/element";
 
@@ -81,6 +84,8 @@ export const actionDuplicateSelection = register({
         };
       },
     });
+
+    advanceDuplicatedListMarkers(duplication.duplicatedElements);
 
     let { duplicatedElements, elementsWithDuplicates } = duplication;
 

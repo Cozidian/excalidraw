@@ -10,6 +10,7 @@ import {
 
 import {
   addElementsToFrame,
+  advanceDuplicatedListMarkers,
   deepCopyElement,
   duplicateElements,
   filterElementsEligibleAsFrameChildren,
@@ -211,6 +212,8 @@ export class AppDuplicate {
         };
       },
     });
+    advanceDuplicatedListMarkers(duplication.duplicatedElements);
+
     const { origElementsMap, origIdToDuplicateId } = duplication;
 
     const mappedClonedElements = duplication.elementsWithDuplicates.map(
