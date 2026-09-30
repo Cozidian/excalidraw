@@ -17,4 +17,7 @@ FROM nginx:stable-alpine-slim@sha256:2c605dbeab79a6b2a63340474fe58119d0ef95bdc4b
 
 COPY --from=build /opt/node_app/excalidraw-app/build /usr/share/nginx/html
 
+# Once's proxy requires a successful /up check before it routes traffic.
+RUN printf 'ok\n' > /usr/share/nginx/html/up
+
 HEALTHCHECK CMD wget -q -O /dev/null http://localhost || exit 1
