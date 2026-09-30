@@ -1,0 +1,6 @@
+services:
+  excalidraw:
+    image: ${EXCALIDRAW_IMAGE:?Set EXCALIDRAW_IMAGE to your published GHCR image}
+    ports:
+      - "${EXCALIDRAW_PORT:-3000}:80"
+    restart: unless-stopped
